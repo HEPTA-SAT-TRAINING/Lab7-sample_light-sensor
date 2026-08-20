@@ -31,6 +31,8 @@ Set `kUserChannel` in the sketch to match the board USER pin:
 | VCC | 3.3 V payload (`eps.switch_3V3_on()`) |
 | GND | GND |
 
+<img width="612" height="421" alt="image" src="https://github.com/user-attachments/assets/5b9d3a11-1363-4e60-a629-006280b65a95" />
+
 ## Build and Upload
 
 1. Open `Lab7-sample_light-sensor.ino` in the Arduino IDE
