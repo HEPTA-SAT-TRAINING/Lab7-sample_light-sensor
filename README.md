@@ -17,13 +17,28 @@ HEPTA-SAT training sample: **SparkFun TEMT6000** ambient light sensor.
 
 | Sensor | HEPTA-SAT |
 |--------|-----------|
-| Analog output | `USER1` |
+| SIG (analog output) | **ADC1** (`USER1` in the sketch) |
 | VCC | 3.3 V payload (`eps.switch_3V3_on()`) |
 | GND | GND |
 
-The sketch uses `light.begin(USER1)`. If you connect the signal to `USER2` or `USER3`, change that argument to match.
+The sketch uses `light.begin(USER1)`. For a different connection, use `USER2` for **ADC2** or `USER3` for **ADC3**.
 
-<img width="612" height="421" alt="image" src="https://github.com/user-attachments/assets/5b9d3a11-1363-4e60-a629-006280b65a95" />
+```mermaid
+flowchart LR
+    subgraph sensor["TEMT6000"]
+        sig["SIG"]
+        vcc["VCC"]
+        gnd["GND"]
+    end
+    subgraph board["HEPTA-SAT payload board"]
+        adc["ADC1 (USER1)"]
+        power["3.3 V"]
+        ground["GND"]
+    end
+    sig --- adc
+    vcc --- power
+    gnd --- ground
+```
 
 ## Build and Upload
 
